@@ -1,0 +1,18 @@
+<h1> Welcome to Rewsley! </h1>
+
+<div>
+	<% @stories.each do |story| %>
+		<li><%= story.title %></li>
+		<li><%= story.upvotes %></li>
+		<li><%= story.category %></li>
+		<li><%= story.link %></li>
+	<% end %>
+</div> 
+
+<%= form_tag("/search","get") do %>
+<%= text_field_tag :criteria %>
+<%= submit_tag "enter" %>
+   
+<% end %>
+
+
